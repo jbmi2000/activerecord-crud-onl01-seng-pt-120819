@@ -23,33 +23,31 @@ def can_be_created_with_a_hash_of_attributes
   movie = Movie.create(attributes)
 end
 
-def can_be_created_in_a_block
+def can_be_created_in_a_block(args =attributes)
   # If no arguments are passed, use default values:
   # title == "Home Alone"
   # release_date == 1990
-  #binding.pry
 
-  Movie.create do |movie|
-    movie.title
-    movie.release_date
+  Movie.create do |m|
+    m.title = attributes[0]
+    m.release_date = attributes[1]
   end
-
 end
 
 def can_get_the_first_item_in_the_database
-  movie = Movie.first
+  __
 end
 
 def can_get_the_last_item_in_the_database
-  movie = Movie.last
+  __
 end
 
 def can_get_size_of_the_database
-  movie = Movie.all.size
+  __
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  movie = Movie.find(1)
+  __
 end
 
 def can_find_by_multiple_attributes
@@ -57,9 +55,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  movie = Movie.find_by(title: "Title")
-  movie = Movie.find_by(release_date: 2000)
-  movie = Movie.find_by(director: "me")
+  __
 end
 
 def can_find_using_where_clause_and_be_sorted
